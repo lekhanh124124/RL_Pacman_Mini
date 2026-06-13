@@ -90,11 +90,11 @@ def render_evaluation_plots(size_key):
     # Hàng 1: Learning Curves và Success/Death Comparison
     col_fig1, col_fig2 = st.columns(2)
     with col_fig1:
-        fig1_path = f"src/reports/figures/learning_curves_{size_key}.png"
+        fig1_path = f"reports/figures/learning_curves_{size_key}.png"
         if os.path.exists(fig1_path):
             st.image(fig1_path, caption=f"Biểu đồ 1: Đường cong học tập trung bình trượt qua 10 Seeds - Bản đồ {size_key}", use_container_width=True)
     with col_fig2:
-        fig2_path = f"src/reports/figures/success_death_comparison_{size_key}.png"
+        fig2_path = f"reports/figures/success_death_comparison_{size_key}.png"
         if os.path.exists(fig2_path):
             st.image(fig2_path, caption=f"Biểu đồ 2: So sánh Tỷ lệ thắng & Tỷ lệ thua bị ma bắt - Bản đồ {size_key}", use_container_width=True)
             
@@ -102,11 +102,11 @@ def render_evaluation_plots(size_key):
     st.markdown("---")
     col_fig3, col_fig4 = st.columns(2)
     with col_fig3:
-        fig3_path = f"src/reports/figures/steps_comparison_{size_key}.png"
+        fig3_path = f"reports/figures/steps_comparison_{size_key}.png"
         if os.path.exists(fig3_path):
             st.image(fig3_path, caption=f"Biểu đồ 3: So sánh Số bước đi trung bình mỗi Episode - Bản đồ {size_key}", use_container_width=True)
     with col_fig4:
-        fig4_path = f"src/reports/figures/wall_hits_comparison_{size_key}.png"
+        fig4_path = f"reports/figures/wall_hits_comparison_{size_key}.png"
         if os.path.exists(fig4_path):
             st.image(fig4_path, caption=f"Biểu đồ 4: So sánh Số lần va chạm tường trung bình mỗi Episode - Bản đồ {size_key}", use_container_width=True)
 
@@ -114,10 +114,10 @@ def render_evaluation_plots(size_key):
     st.markdown("---")
     col_fig5, col_fig6 = st.columns(2)
     with col_fig5:
-        fig5_path = f"src/reports/figures/steps_boxplot_{size_key}.png"
+        fig5_path = f"reports/figures/steps_boxplot_{size_key}.png"
         if os.path.exists(fig5_path):
             st.image(fig5_path, caption=f"Biểu đồ 5: Phân bố số bước đi khi thắng (Boxplot) - Bản đồ {size_key}", use_container_width=True)
     with col_fig6:
-        fig6_path = f"src/reports/figures/radar_comparison_{size_key}.png"
+        fig6_path = f"reports/figures/radar_comparison_{size_key}.png"
         if os.path.exists(fig6_path):
             st.image(fig6_path, caption=f"Biểu đồ 6: Đánh giá hiệu năng toàn diện đa tiêu chí (Radar Chart) - Bản đồ {size_key}", use_container_width=True)

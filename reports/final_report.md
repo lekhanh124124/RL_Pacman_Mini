@@ -91,7 +91,7 @@ Tất cả các tác nhân RL sử dụng cơ chế $\epsilon$-greedy để khá
 ## 5. Thiết lập thực nghiệm
 
 ### 5.1. Cấu hình Siêu tham số
-Quá trình huấn luyện sử dụng cấu hình tập trung trong `src/experiments/configs.yaml`:
+Quá trình huấn luyện sử dụng cấu hình tập trung trong `experiments/configs.yaml`:
 - **Số lượng seed độc lập**: `num_seeds = 10` để triệt tiêu các yếu tố ngẫu nhiên và đảm bảo tính thống kê khoa học.
 - **Ngân sách huấn luyện**: `num_episodes = 50000` episodes mỗi seed (đảm bảo hội tụ đầy đủ).
 - **Tốc độ học**: $\alpha = 0.05$
@@ -100,7 +100,7 @@ Quá trình huấn luyện sử dụng cấu hình tập trung trong `src/experi
 - **Đánh giá**: Mỗi seed được đánh giá qua `num_eval_episodes = 200` episodes ở chế độ $\epsilon=0$.
 
 ### 5.2. Quy trình thực nghiệm
-Chạy huấn luyện tuần tự cả 3 thuật toán RL qua 10 seed. Các tệp Q-table tối ưu được lưu trữ tại `src/dashboard/policies/`. Sau đó chạy script đánh giá để tổng hợp số liệu thống kê (Mean ± Std) và tự động sinh 6 biểu đồ so sánh chất lượng cao cho mỗi bản đồ.
+Chạy huấn luyện tuần tự cả 3 thuật toán RL qua 10 seed. Các tệp Q-table tối ưu được lưu trữ tại `dashboard/policies/`. Sau đó chạy script đánh giá để tổng hợp số liệu thống kê (Mean ± Std) và tự động sinh 6 biểu đồ so sánh chất lượng cao cho mỗi bản đồ.
 
 ---
 
@@ -234,22 +234,22 @@ pip install -r requirements.txt
 
 ### 9.2. Chạy bộ kiểm thử tự động (Unit Tests)
 ```bash
-python -m unittest discover -s src/tests -p "test_*.py" -v
+python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
 ### 9.3. Huấn luyện và Đánh giá mô hình
 * Huấn luyện mô hình RL tự động để tạo các tệp Q-table:
 ```bash
-python src/experiments/train.py
+python experiments/train.py
 ```
 * Chạy đánh giá thống kê đa seed và tự động vẽ 6 biểu đồ so sánh:
 ```bash
-python src/experiments/evaluate.py
+python experiments/evaluate.py
 ```
 
 ### 9.4. Khởi chạy Giao diện Web Dashboard tương tác (Streamlit)
 ```bash
-streamlit run src/dashboard/app.py
+streamlit run dashboard/app.py
 ```
 
 ---

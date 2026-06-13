@@ -35,7 +35,7 @@ def evaluate_all_agents():
     rewards = config["env"].get("rewards", None)
 
     # Đảm bảo tồn tại các thư mục lưu trữ
-    os.makedirs("src/reports/figures", exist_ok=True)
+    os.makedirs("reports/figures", exist_ok=True)
 
     summary_data = {}
     map_sizes = [5, 6, 7]
@@ -89,9 +89,9 @@ def evaluate_all_agents():
             s_agent = SarsaAgent(epsilon=0.0)
             dq_agent = DoubleQLearningAgent(epsilon=0.0)
             
-            q_policy_path = f"src/dashboard/policies/q_learning_seed_{seed}_{width}x{height}.json"
-            s_policy_path = f"src/dashboard/policies/sarsa_seed_{seed}_{width}x{height}.json"
-            dq_policy_path = f"src/dashboard/policies/double_q_seed_{seed}_{width}x{height}.json"
+            q_policy_path = f"dashboard/policies/q_learning_seed_{seed}_{width}x{height}.json"
+            s_policy_path = f"dashboard/policies/sarsa_seed_{seed}_{width}x{height}.json"
+            dq_policy_path = f"dashboard/policies/double_q_seed_{seed}_{width}x{height}.json"
             
             if os.path.exists(q_policy_path):
                 q_agent.load_policy(q_policy_path)
@@ -228,7 +228,7 @@ def evaluate_all_agents():
         print(f"\n-> Đang vẽ đồ thị cho map {width}x{height}...")
         
         # 1. Đồ thị Learning Curves từ training_history.json
-        history_path = "src/reports/training_history.json"
+        history_path = "reports/training_history.json"
         if os.path.exists(history_path):
             with open(history_path, 'r', encoding='utf-8') as f:
                 history_data = json.load(f)
@@ -255,9 +255,9 @@ def evaluate_all_agents():
                 plt.ylabel(f"Reward Trung bình Trượt (Window={window_size})", fontsize=12)
                 plt.grid(True, linestyle='--', alpha=0.5)
                 plt.legend(fontsize=11)
-                plt.savefig(f"src/reports/figures/learning_curves_{width}x{height}.png", dpi=300, bbox_inches='tight')
+                plt.savefig(f"reports/figures/learning_curves_{width}x{height}.png", dpi=300, bbox_inches='tight')
                 plt.close()
-                print(f"   * Lưu thành công: src/reports/figures/learning_curves_{width}x{height}.png")
+                print(f"   * Lưu thành công: reports/figures/learning_curves_{width}x{height}.png")
                 
         # 2. Đồ thị Bar Chart so sánh Tỷ lệ thắng & Tỷ lệ chết
         agents = list(results.keys())
@@ -281,9 +281,9 @@ def evaluate_all_agents():
         ax.legend(fontsize=11)
         ax.grid(axis='y', linestyle='--', alpha=0.5)
         plt.tight_layout()
-        plt.savefig(f"src/reports/figures/success_death_comparison_{width}x{height}.png", dpi=300, bbox_inches='tight')
+        plt.savefig(f"reports/figures/success_death_comparison_{width}x{height}.png", dpi=300, bbox_inches='tight')
         plt.close()
-        print(f"   * Lưu thành công: src/reports/figures/success_death_comparison_{width}x{height}.png")
+        print(f"   * Lưu thành công: reports/figures/success_death_comparison_{width}x{height}.png")
 
         # 3. Đồ thị Bar Chart so sánh Số bước đi trung bình
         step_means = [summary_data[size_key][a]['raw']['steps_mean'] for a in agents]
@@ -296,9 +296,9 @@ def evaluate_all_agents():
         ax.grid(axis='y', linestyle='--', alpha=0.5)
         plt.xticks(rotation=15, fontsize=11)
         plt.tight_layout()
-        plt.savefig(f"src/reports/figures/steps_comparison_{width}x{height}.png", dpi=300, bbox_inches='tight')
+        plt.savefig(f"reports/figures/steps_comparison_{width}x{height}.png", dpi=300, bbox_inches='tight')
         plt.close()
-        print(f"   * Lưu thành công: src/reports/figures/steps_comparison_{width}x{height}.png")
+        print(f"   * Lưu thành công: reports/figures/steps_comparison_{width}x{height}.png")
 
         # 4. Đồ thị Bar Chart so sánh Số lần đâm tường trung bình
         wall_hits_means = [summary_data[size_key][a]['raw']['wall_hits_mean'] for a in agents]
@@ -311,9 +311,9 @@ def evaluate_all_agents():
         ax.grid(axis='y', linestyle='--', alpha=0.5)
         plt.xticks(rotation=15, fontsize=11)
         plt.tight_layout()
-        plt.savefig(f"src/reports/figures/wall_hits_comparison_{width}x{height}.png", dpi=300, bbox_inches='tight')
+        plt.savefig(f"reports/figures/wall_hits_comparison_{width}x{height}.png", dpi=300, bbox_inches='tight')
         plt.close()
-        print(f"   * Lưu thành công: src/reports/figures/wall_hits_comparison_{width}x{height}.png")
+        print(f"   * Lưu thành công: reports/figures/wall_hits_comparison_{width}x{height}.png")
 
         # 5. Đồ thị Boxplot phân bổ số bước đi khi thắng (Path Efficiency)
         fig, ax = plt.subplots(figsize=(9, 6))
@@ -326,9 +326,9 @@ def evaluate_all_agents():
         ax.set_title(f'Phân Bố Số Bước Đi Khi Chiến Thắng - Bản đồ {width}x{height}', fontsize=14, fontweight='bold', pad=15)
         ax.grid(axis='y', linestyle='--', alpha=0.5)
         plt.tight_layout()
-        plt.savefig(f"src/reports/figures/steps_boxplot_{width}x{height}.png", dpi=300, bbox_inches='tight')
+        plt.savefig(f"reports/figures/steps_boxplot_{width}x{height}.png", dpi=300, bbox_inches='tight')
         plt.close()
-        print(f"   * Lưu thành công: src/reports/figures/steps_boxplot_{width}x{height}.png")
+        print(f"   * Lưu thành công: reports/figures/steps_boxplot_{width}x{height}.png")
 
         # 6. Đồ thị Radar Chart so sánh toàn diện đa chiều
         categories = ['Tỷ lệ Thắng (%)', 'Tỷ lệ Sống sót (%)', 'Tránh đâm tường (%)', 'Hiệu suất bước đi (%)']
@@ -369,9 +369,9 @@ def evaluate_all_agents():
         plt.title(f'So Sánh Toàn Diện Đa Chiều (Radar Chart) - Bản đồ {width}x{height}', fontsize=14, fontweight='bold', pad=25)
         plt.legend(loc='upper right', bbox_to_anchor=(1.3, 1.1), fontsize=11)
         plt.tight_layout()
-        plt.savefig(f"src/reports/figures/radar_comparison_{width}x{height}.png", dpi=300, bbox_inches='tight')
+        plt.savefig(f"reports/figures/radar_comparison_{width}x{height}.png", dpi=300, bbox_inches='tight')
         plt.close()
-        print(f"   * Lưu thành công: src/reports/figures/radar_comparison_{width}x{height}.png")
+        print(f"   * Lưu thành công: reports/figures/radar_comparison_{width}x{height}.png")
 
     # Thêm metadata vào tệp kết quả
     summary_data['metadata'] = {
@@ -380,9 +380,9 @@ def evaluate_all_agents():
     }
     
     # Ghi kết quả so sánh ra JSON để dashboard sử dụng
-    with open("src/reports/results_summary.json", "w", encoding="utf-8") as f:
+    with open("reports/results_summary.json", "w", encoding="utf-8") as f:
         json.dump(summary_data, f, indent=4)
-    print("\n-> Đã lưu toàn bộ kết quả đánh giá tại: src/reports/results_summary.json")
+    print("\n-> Đã lưu toàn bộ kết quả đánh giá tại: reports/results_summary.json")
     print("\n=============================================================")
     print(" TIẾN TRÌNH ĐÁNH GIÁ HOÀN TẤT THÀNH CÔNG CHO CẢ 3 BẢN ĐỒ!")
     print("=============================================================")

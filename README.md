@@ -43,23 +43,23 @@ pip install -r requirements.txt
 ### 2. Chạy Kiểm Thử Tự Động (Unit Tests)
 Đảm bảo môi trường hoạt động không có lỗi:
 ```bash
-python -m unittest discover -s src/tests -p "test_*.py" -v
+python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
 ### 3. Huấn Luyện và Đánh Giá
 - **Huấn luyện mô hình**:
 ```bash
-python src/experiments/train.py
+python experiments/train.py
 ```
 - **Chạy sinh số liệu và vẽ 6 biểu đồ thống kê đối chứng**:
 ```bash
-python src/experiments/evaluate.py
+python experiments/evaluate.py
 ```
 
 ### 4. Khởi Chạy Giao Diện Dashboard (Web Streamlit)
 Trải nghiệm trực quan live demo, policy map:
 ```bash
-streamlit run src/dashboard/app.py
+streamlit run dashboard/app.py
 ```
 
 ---
@@ -67,7 +67,7 @@ streamlit run src/dashboard/app.py
 ## 📂 Cấu Trúc Mã Nguồn
 
 ```text
-src/
+.
   ├── agents/          # Chứa logic của 5 thuật toán agent
   ├── dashboard/       # Ứng dụng Streamlit hiển thị UI và live demo
   ├── envs/            # Môi trường custom PacmanMiniEnv

@@ -7,7 +7,8 @@ import json
 import yaml
 
 # Thêm thư mục src vào PATH
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(ROOT_DIR)
 
 from envs.custom_env import PacmanMiniEnv, GHOST_ZONE_MAP, COIN_DIR_MAP, COIN_COUNT_MAP
 from agents.q_learning import QLearningAgent
@@ -130,13 +131,13 @@ elif agent_choice == "Heuristic Agent":
     agent = HeuristicAgent()
 elif agent_choice == "Q-Learning Agent":
     agent = QLearningAgent(epsilon=0.0)
-    policy_path = f"src/dashboard/q_learning_policy_{w_size}x{h_size}.json"
+    policy_path = os.path.join(ROOT_DIR, "dashboard", f"q_learning_policy_{w_size}x{h_size}.json")
 elif agent_choice == "SARSA Agent":
     agent = SarsaAgent(epsilon=0.0)
-    policy_path = f"src/dashboard/sarsa_policy_{w_size}x{h_size}.json"
+    policy_path = os.path.join(ROOT_DIR, "dashboard", f"sarsa_policy_{w_size}x{h_size}.json")
 else:
     agent = DoubleQLearningAgent(epsilon=0.0)
-    policy_path = f"src/dashboard/double_q_policy_{w_size}x{h_size}.json"
+    policy_path = os.path.join(ROOT_DIR, "dashboard", f"double_q_policy_{w_size}x{h_size}.json")
 
 # Nạp file Q-table nếu có
 if policy_path and os.path.exists(policy_path):
@@ -286,7 +287,7 @@ with tab_policy:
 with tab_report:
     st.subheader("📊 Báo cáo Kết quả Thực nghiệm & Thống kê Khoa học")
     
-    summary_path = "src/reports/results_summary.json"
+    summary_path = os.path.join(ROOT_DIR, "reports", "results_summary.json")
     if not os.path.exists(summary_path):
         st.markdown(
             "Dưới đây là các số liệu thống kê thu thập được từ thực tế huấn luyện và đánh giá. "
@@ -346,7 +347,7 @@ with tab_report:
         
                     analysis_text = (
                         f"1. **Mức độ Hội tụ (Biểu đồ 1):** Đường cong học tập của cả 3 tác nhân RL đều có xu hướng đi lên mạnh mẽ và bão hòa ổn định ở giai đoạn sau, chứng minh các thuật toán đạt mức hội tụ tối ưu thành công.\n"
-                        f"2. **Khả năng Sinh tồn (Biểu đồ 2):** Các tác nhân RL đạt tỷ lệ thắng ăn xu cao vượt trội và tỷ lệ tử vong do ma bắt thấp tiệm cận về 0%, vượt xa Random Agent (chỉ đạt tỷ lệ thắng {rnd_win:.1f}%).\n"
+                        f"2. **Khả năng Sinh tồn (Biểu đồ 2):** Các tác nhân RL giảm đáng kể tỷ lệ bị Ghost bắt so với Random và Heuristic, nhưng vẫn còn tỷ lệ thất bại nhất định do Ghost stochastic.\n"
                         f"3. **Hiệu suất di chuyển (Biểu đồ 3 & 5):** Biểu đồ cột thể hiện số bước đi trung bình tổng quát, trong khi Boxplot (Biểu đồ 5) mô tả chi tiết độ ổn định của các ván thắng. Hộp phân bố của các Agent RL hẹp và nằm ở vùng bước đi thấp, cho thấy chính sách di chuyển cực kỳ ổn định và tìm được đường đi ngắn nhất.\n"
                         f"4. **Ràng buộc an toàn (Biểu đồ 4):** Chỉ số va chạm tường của Agent RL tiệm cận về 0, chứng tỏ tác nhân đã hoàn toàn nhận thức được bản đồ mê cung để di chuyển mượt mà, không đi lỗi đâm tường như Random/Heuristic Agent.\n"
                         f"5. **Đánh giá toàn diện (Biểu đồ 6 & So sánh):** Biểu đồ Radar kết hợp đa tiêu chí (Tỷ lệ thắng, Sống sót, Tránh đâm tường, Hiệu suất đường đi) giúp trực quan hóa rõ nét thế mạnh của từng Agent. Trong đó, thuật toán **{best_rl}** (đạt tỷ lệ thắng **{best_rl_win:.1f}%**) mang lại sự cân bằng tối ưu nhất giữa khả năng sinh tồn và hiệu suất tối ưu hóa đường đi."

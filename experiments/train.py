@@ -35,8 +35,8 @@ def train_all_agents():
     rewards = config["env"].get("rewards", None)
 
     # Đảm bảo tồn tại các thư mục lưu trữ
-    os.makedirs("src/dashboard/policies", exist_ok=True)
-    os.makedirs("src/reports", exist_ok=True)
+    os.makedirs("dashboard/policies", exist_ok=True)
+    os.makedirs("reports", exist_ok=True)
 
     all_history_data = {}
     map_sizes = [5, 6, 7]
@@ -95,9 +95,9 @@ def train_all_agents():
                 q_learning_train_history[ep] += total_r
                 
             # Lưu Q-table cho seed này
-            q_agent.save_policy(f"src/dashboard/policies/q_learning_seed_{seed}_{width}x{height}.json")
+            q_agent.save_policy(f"dashboard/policies/q_learning_seed_{seed}_{width}x{height}.json")
             if seed_idx == 0:
-                q_agent.save_policy(f"src/dashboard/q_learning_policy_{width}x{height}.json")
+                q_agent.save_policy(f"dashboard/q_learning_policy_{width}x{height}.json")
 
             # 2. Huấn luyện SARSA
             print(" -> Huấn luyện SARSA Agent...")
@@ -125,9 +125,9 @@ def train_all_agents():
                 sarsa_train_history[ep] += total_r
                 
             # Lưu Q-table cho seed này
-            sarsa_agent.save_policy(f"src/dashboard/policies/sarsa_seed_{seed}_{width}x{height}.json")
+            sarsa_agent.save_policy(f"dashboard/policies/sarsa_seed_{seed}_{width}x{height}.json")
             if seed_idx == 0:
-                sarsa_agent.save_policy(f"src/dashboard/sarsa_policy_{width}x{height}.json")
+                sarsa_agent.save_policy(f"dashboard/sarsa_policy_{width}x{height}.json")
 
             # 3. Huấn luyện Double Q-Learning
             print(" -> Huấn luyện Double Q-Learning Agent...")
@@ -153,9 +153,9 @@ def train_all_agents():
                 double_q_train_history[ep] += total_r
                 
             # Lưu Q-table cho seed này
-            double_q_agent.save_policy(f"src/dashboard/policies/double_q_seed_{seed}_{width}x{height}.json")
+            double_q_agent.save_policy(f"dashboard/policies/double_q_seed_{seed}_{width}x{height}.json")
             if seed_idx == 0:
-                double_q_agent.save_policy(f"src/dashboard/double_q_policy_{width}x{height}.json")
+                double_q_agent.save_policy(f"dashboard/double_q_policy_{width}x{height}.json")
 
         # Tính trung bình lịch sử huấn luyện qua các seeds
         q_learning_train_history /= len(seeds)
@@ -169,12 +169,12 @@ def train_all_agents():
         }
 
     # Ghi toàn bộ lịch sử huấn luyện ra tệp JSON
-    with open("src/reports/training_history.json", "w", encoding="utf-8") as f:
+    with open("reports/training_history.json", "w", encoding="utf-8") as f:
         json.dump(all_history_data, f, indent=4)
         
     print("\n🎉 TIẾN TRÌNH HUẤN LUYỆN HOÀN TẤT THÀNH CÔNG CHO CẢ 3 BẢN ĐỒ!")
-    print("-> Đã lưu các chính sách Q-table tại: src/dashboard/policies/")
-    print("-> Đã lưu lịch sử huấn luyện tại: src/reports/training_history.json")
+    print("-> Đã lưu các chính sách Q-table tại: dashboard/policies/")
+    print("-> Đã lưu lịch sử huấn luyện tại: reports/training_history.json")
 
 if __name__ == "__main__":
     train_all_agents()
