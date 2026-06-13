@@ -1,0 +1,46 @@
+env:
+  ghost_chase_prob: 0.3
+  height: 6
+  width: 6
+  max_steps: 150
+  num_coins: 5
+  randomize_coins: true
+  randomize_ghost: true
+  randomize_pacman: true
+  randomize_walls: false
+  rewards:
+    coin: 5.0
+    win: 30.0
+    caught: -50.0
+    wall: -5.0
+    step: -1.0
+double_q_learning:
+  alpha: 0.05
+  epsilon_decay: 0.995
+  epsilon_min: 0.05
+  epsilon_start: 1.0
+  gamma: 0.9
+q_learning:
+  alpha: 0.05
+  epsilon_decay: 0.995
+  epsilon_min: 0.05
+  epsilon_start: 1.0
+  gamma: 0.9
+sarsa:
+  alpha: 0.05
+  epsilon_decay: 0.995
+  epsilon_min: 0.05
+  epsilon_start: 1.0
+  gamma: 0.9
+training:
+  num_episodes: 50000
+  num_seeds: 10
+  seeds: [10, 24, 42, 99, 123, 456, 789, 1000, 2026, 9999]
+evaluation:
+  num_episodes: 200
+  window_size: 20
+sweep:
+  alphas: [0.01, 0.05, 0.1, 0.2]
+  gammas: [0.85, 0.9, 0.95]
+  num_episodes: 5000
+  seeds: [42, 123, 999]

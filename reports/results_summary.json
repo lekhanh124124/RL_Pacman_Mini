@@ -1,0 +1,342 @@
+{
+    "5x5": {
+        "Random": {
+            "success_rate": "0.2% \u00b1 0.2%",
+            "reward": "-82.6 \u00b1 1.2",
+            "steps": "13.74 \u00b1 0.41",
+            "steps_on_win": "26.75 \u00b1 6.06",
+            "death_rate": "99.8% \u00b1 0.2%",
+            "wall_hits": "6.62 \u00b1 0.21",
+            "raw": {
+                "success_mean": 0.2,
+                "success_std": 0.24494897427831783,
+                "reward_mean": -82.57000000000001,
+                "reward_std": 1.2139810542178988,
+                "steps_mean": 13.74,
+                "steps_std": 0.4137753013411987,
+                "steps_on_win_mean": 26.75,
+                "steps_on_win_std": 6.057020719792859,
+                "death_mean": 99.8,
+                "death_std": 0.24494897427831805,
+                "wall_hits_mean": 6.6165,
+                "wall_hits_std": 0.20514689858732935
+            }
+        },
+        "Heuristic": {
+            "success_rate": "24.8% \u00b1 2.2%",
+            "reward": "-25.7 \u00b1 2.0",
+            "steps": "9.79 \u00b1 0.33",
+            "steps_on_win": "13.22 \u00b1 0.49",
+            "death_rate": "75.2% \u00b1 2.2%",
+            "wall_hits": "1.02 \u00b1 0.10",
+            "raw": {
+                "success_mean": 24.8,
+                "success_std": 2.193171219946132,
+                "reward_mean": -25.705000000000002,
+                "reward_std": 1.9666926551955188,
+                "steps_mean": 9.791999999999998,
+                "steps_std": 0.33211594361005925,
+                "steps_on_win_mean": 13.21889641171887,
+                "steps_on_win_std": 0.4920921261673773,
+                "death_mean": 75.2,
+                "death_std": 2.193171219946133,
+                "wall_hits_mean": 1.02,
+                "wall_hits_std": 0.09772410142846032
+            }
+        },
+        "Q-Learning": {
+            "success_rate": "66.3% \u00b1 4.5%",
+            "reward": "-0.6 \u00b1 8.0",
+            "steps": "22.93 \u00b1 2.36",
+            "steps_on_win": "27.94 \u00b1 2.99",
+            "death_rate": "33.6% \u00b1 4.4%",
+            "wall_hits": "0.38 \u00b1 0.87",
+            "raw": {
+                "success_mean": 66.35,
+                "success_std": 4.472415454762672,
+                "reward_mean": -0.5799999999999998,
+                "reward_std": 8.002804508420782,
+                "steps_mean": 22.931,
+                "steps_std": 2.3594573528673926,
+                "steps_on_win_mean": 27.944329203879022,
+                "steps_on_win_std": 2.9892155247165575,
+                "death_mean": 33.550000000000004,
+                "death_std": 4.441002139157331,
+                "wall_hits_mean": 0.38450000000000006,
+                "wall_hits_std": 0.8669095973629546
+            }
+        },
+        "SARSA": {
+            "success_rate": "67.1% \u00b1 4.6%",
+            "reward": "-0.9 \u00b1 7.9",
+            "steps": "23.80 \u00b1 3.35",
+            "steps_on_win": "28.89 \u00b1 4.59",
+            "death_rate": "32.8% \u00b1 4.6%",
+            "wall_hits": "0.38 \u00b1 0.61",
+            "raw": {
+                "success_mean": 67.14999999999999,
+                "success_std": 4.588300338905464,
+                "reward_mean": -0.8689999999999994,
+                "reward_std": 7.863316348716997,
+                "steps_mean": 23.802500000000002,
+                "steps_std": 3.3546432373651895,
+                "steps_on_win_mean": 28.887287799055876,
+                "steps_on_win_std": 4.5887939431004385,
+                "death_mean": 32.800000000000004,
+                "death_std": 4.57274534606947,
+                "wall_hits_mean": 0.3775,
+                "wall_hits_std": 0.6069441901855557
+            }
+        },
+        "Double Q-Learning": {
+            "success_rate": "66.8% \u00b1 3.9%",
+            "reward": "3.1 \u00b1 7.6",
+            "steps": "19.62 \u00b1 3.06",
+            "steps_on_win": "23.85 \u00b1 3.83",
+            "death_rate": "33.1% \u00b1 3.7%",
+            "wall_hits": "0.43 \u00b1 0.62",
+            "raw": {
+                "success_mean": 66.8,
+                "success_std": 3.861346915261564,
+                "reward_mean": 3.1189999999999998,
+                "reward_std": 7.583512972231273,
+                "steps_mean": 19.621499999999997,
+                "steps_std": 3.0587530547594066,
+                "steps_on_win_mean": 23.852144589875657,
+                "steps_on_win_std": 3.826612706978084,
+                "death_mean": 33.15,
+                "death_std": 3.748666429545312,
+                "wall_hits_mean": 0.42749999999999994,
+                "wall_hits_std": 0.6244447533609359
+            }
+        }
+    },
+    "6x6": {
+        "Random": {
+            "success_rate": "0.1% \u00b1 0.2%",
+            "reward": "-92.9 \u00b1 2.3",
+            "steps": "16.88 \u00b1 0.74",
+            "steps_on_win": "49.00 \u00b1 3.00",
+            "death_rate": "99.9% \u00b1 0.2%",
+            "wall_hits": "8.20 \u00b1 0.42",
+            "raw": {
+                "success_mean": 0.1,
+                "success_std": 0.2,
+                "reward_mean": -92.92150000000001,
+                "reward_std": 2.2858270385136317,
+                "steps_mean": 16.8775,
+                "steps_std": 0.7378693990131314,
+                "steps_on_win_mean": 49.0,
+                "steps_on_win_std": 3.0,
+                "death_mean": 99.9,
+                "death_std": 0.20000000000000018,
+                "wall_hits_mean": 8.202,
+                "wall_hits_std": 0.41794257978818095
+            }
+        },
+        "Heuristic": {
+            "success_rate": "24.6% \u00b1 2.1%",
+            "reward": "-27.9 \u00b1 2.0",
+            "steps": "11.97 \u00b1 0.17",
+            "steps_on_win": "15.15 \u00b1 0.76",
+            "death_rate": "75.4% \u00b1 2.1%",
+            "wall_hits": "1.06 \u00b1 0.05",
+            "raw": {
+                "success_mean": 24.55,
+                "success_std": 2.091052366632649,
+                "reward_mean": -27.937,
+                "reward_std": 1.9650511443725838,
+                "steps_mean": 11.971,
+                "steps_std": 0.1736490714055218,
+                "steps_on_win_mean": 15.149761925606906,
+                "steps_on_win_std": 0.7644018938408992,
+                "death_mean": 75.44999999999999,
+                "death_std": 2.09105236663265,
+                "wall_hits_mean": 1.0574999999999999,
+                "wall_hits_std": 0.04823121395942673
+            }
+        },
+        "Q-Learning": {
+            "success_rate": "62.9% \u00b1 2.9%",
+            "reward": "-13.0 \u00b1 5.1",
+            "steps": "32.49 \u00b1 2.67",
+            "steps_on_win": "40.61 \u00b1 4.01",
+            "death_rate": "37.0% \u00b1 2.9%",
+            "wall_hits": "0.33 \u00b1 0.57",
+            "raw": {
+                "success_mean": 62.9,
+                "success_std": 2.879236009777596,
+                "reward_mean": -13.036000000000001,
+                "reward_std": 5.0780029539180065,
+                "steps_mean": 32.489,
+                "steps_std": 2.6702123511061813,
+                "steps_on_win_mean": 40.60642843940609,
+                "steps_on_win_std": 4.007532483979432,
+                "death_mean": 37.0,
+                "death_std": 2.854820484724039,
+                "wall_hits_mean": 0.33499999999999996,
+                "wall_hits_std": 0.5708152065248437
+            }
+        },
+        "SARSA": {
+            "success_rate": "61.0% \u00b1 3.3%",
+            "reward": "-13.1 \u00b1 5.3",
+            "steps": "31.64 \u00b1 3.07",
+            "steps_on_win": "39.49 \u00b1 4.67",
+            "death_rate": "38.8% \u00b1 3.2%",
+            "wall_hits": "0.14 \u00b1 0.10",
+            "raw": {
+                "success_mean": 61.04999999999999,
+                "success_std": 3.2745228660065884,
+                "reward_mean": -13.141,
+                "reward_std": 5.31729339043841,
+                "steps_mean": 31.642000000000003,
+                "steps_std": 3.065248113937923,
+                "steps_on_win_mean": 39.494848144786786,
+                "steps_on_win_std": 4.671578452718208,
+                "death_mean": 38.849999999999994,
+                "death_std": 3.240756084619762,
+                "wall_hits_mean": 0.14499999999999996,
+                "wall_hits_std": 0.10037429949942367
+            }
+        },
+        "Double Q-Learning": {
+            "success_rate": "65.0% \u00b1 2.3%",
+            "reward": "-1.0 \u00b1 5.2",
+            "steps": "24.04 \u00b1 3.42",
+            "steps_on_win": "29.19 \u00b1 4.27",
+            "death_rate": "35.0% \u00b1 2.3%",
+            "wall_hits": "0.07 \u00b1 0.04",
+            "raw": {
+                "success_mean": 65.0,
+                "success_std": 2.2693611435820435,
+                "reward_mean": -1.019,
+                "reward_std": 5.215595747371531,
+                "steps_mean": 24.041,
+                "steps_std": 3.4165990399811323,
+                "steps_on_win_mean": 29.18792609285425,
+                "steps_on_win_std": 4.26743427073374,
+                "death_mean": 35.0,
+                "death_std": 2.2693611435820427,
+                "wall_hits_mean": 0.07250000000000001,
+                "wall_hits_std": 0.0427346463656832
+            }
+        }
+    },
+    "7x7": {
+        "Random": {
+            "success_rate": "0.1% \u00b1 0.2%",
+            "reward": "-102.8 \u00b1 2.2",
+            "steps": "21.06 \u00b1 0.82",
+            "steps_on_win": "48.50 \u00b1 17.50",
+            "death_rate": "99.9% \u00b1 0.2%",
+            "wall_hits": "9.57 \u00b1 0.38",
+            "raw": {
+                "success_mean": 0.1,
+                "success_std": 0.2,
+                "reward_mean": -102.849,
+                "reward_std": 2.1944108548765433,
+                "steps_mean": 21.064,
+                "steps_std": 0.8216166989539585,
+                "steps_on_win_mean": 48.5,
+                "steps_on_win_std": 17.5,
+                "death_mean": 99.9,
+                "death_std": 0.20000000000000018,
+                "wall_hits_mean": 9.5735,
+                "wall_hits_std": 0.3831778307783473
+            }
+        },
+        "Heuristic": {
+            "success_rate": "31.3% \u00b1 2.0%",
+            "reward": "-23.8 \u00b1 1.6",
+            "steps": "14.31 \u00b1 0.40",
+            "steps_on_win": "18.89 \u00b1 0.35",
+            "death_rate": "68.7% \u00b1 2.0%",
+            "wall_hits": "0.92 \u00b1 0.09",
+            "raw": {
+                "success_mean": 31.3,
+                "success_std": 2.014944167960988,
+                "reward_mean": -23.7835,
+                "reward_std": 1.6241583204847982,
+                "steps_mean": 14.311499999999999,
+                "steps_std": 0.39691340365374406,
+                "steps_on_win_mean": 18.88993905767386,
+                "steps_on_win_std": 0.35261986214568064,
+                "death_mean": 68.7,
+                "death_std": 2.014944167960986,
+                "wall_hits_mean": 0.9165000000000001,
+                "wall_hits_std": 0.08697844560579363
+            }
+        },
+        "Q-Learning": {
+            "success_rate": "56.9% \u00b1 2.5%",
+            "reward": "-26.7 \u00b1 5.2",
+            "steps": "40.58 \u00b1 2.97",
+            "steps_on_win": "50.59 \u00b1 4.51",
+            "death_rate": "42.2% \u00b1 2.5%",
+            "wall_hits": "0.29 \u00b1 0.46",
+            "raw": {
+                "success_mean": 56.94999999999999,
+                "success_std": 2.5243811122728657,
+                "reward_mean": -26.746,
+                "reward_std": 5.184327246615515,
+                "steps_mean": 40.5805,
+                "steps_std": 2.968850324620626,
+                "steps_on_win_mean": 50.58535180690409,
+                "steps_on_win_std": 4.5066703528204695,
+                "death_mean": 42.199999999999996,
+                "death_std": 2.4819347291981715,
+                "wall_hits_mean": 0.28700000000000003,
+                "wall_hits_std": 0.45876028598822716
+            }
+        },
+        "SARSA": {
+            "success_rate": "59.7% \u00b1 4.7%",
+            "reward": "-22.1 \u00b1 10.7",
+            "steps": "38.42 \u00b1 6.99",
+            "steps_on_win": "48.87 \u00b1 10.27",
+            "death_rate": "39.6% \u00b1 4.3%",
+            "wall_hits": "0.26 \u00b1 0.38",
+            "raw": {
+                "success_mean": 59.650000000000006,
+                "success_std": 4.690682253148257,
+                "reward_mean": -22.071,
+                "reward_std": 10.709012746280584,
+                "steps_mean": 38.419,
+                "steps_std": 6.992967467391795,
+                "steps_on_win_mean": 48.8731760077716,
+                "steps_on_win_std": 10.273301584982319,
+                "death_mean": 39.65,
+                "death_std": 4.341946568072896,
+                "wall_hits_mean": 0.263,
+                "wall_hits_std": 0.38338101152769677
+            }
+        },
+        "Double Q-Learning": {
+            "success_rate": "64.1% \u00b1 6.5%",
+            "reward": "-4.9 \u00b1 10.1",
+            "steps": "27.31 \u00b1 4.06",
+            "steps_on_win": "33.58 \u00b1 6.80",
+            "death_rate": "35.7% \u00b1 6.3%",
+            "wall_hits": "0.03 \u00b1 0.06",
+            "raw": {
+                "success_mean": 64.14999999999999,
+                "success_std": 6.519394143630218,
+                "reward_mean": -4.939500000000001,
+                "reward_std": 10.054855655353787,
+                "steps_mean": 27.311,
+                "steps_std": 4.0611875110612665,
+                "steps_on_win_mean": 33.57570550772515,
+                "steps_on_win_std": 6.799378041663703,
+                "death_mean": 35.7,
+                "death_std": 6.337191807101942,
+                "wall_hits_mean": 0.027500000000000004,
+                "wall_hits_std": 0.06141050398751015
+            }
+        }
+    },
+    "metadata": {
+        "num_seeds": 10,
+        "num_eval_episodes": 200
+    }
+}
